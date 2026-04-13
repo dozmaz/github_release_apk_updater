@@ -1,6 +1,6 @@
 name: github_release_apk_updater_example
 description: "Demonstrates how to use the github_release_apk_updater plugin."
-version: 1.0.0
+version: 1.0.1
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

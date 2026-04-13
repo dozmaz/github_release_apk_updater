@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Fixed dependency conflict with `win32` between `geolocator` and `device_info_plus` in the project environment.
+
 ## 1.0.0
 
 * Initial release of `github_release_apk_updater`.
@@ -6,3 +10,4 @@
 * Added native Android support for launching APK installations.
 * Included a version comparison utility to detect available updates.
 * Provided a sample application demonstrating the full update lifecycle.
+
