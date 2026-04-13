@@ -1,3 +1,8 @@
+## 1.0.3
+
+* Fixed issue where the plugin was not able to find the APK file in the GitHub releases.
+* Update example project to use the plugin
+
 ## 1.0.2
 
 * Fixed issue where the plugin was not able to find the APK file in the GitHub releases.

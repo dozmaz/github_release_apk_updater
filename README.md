@@ -64,31 +64,43 @@ import 'package:github_release_apk_updater/github_release_apk_updater.dart';
 
 void checkForUpdates() async {
   final updater = GithubReleaseApkUpdater();
-  final apiService = GitHubApiService(
-    owner: 'guido-cutipa',
-    repo: 'dummy-repo',
+  final apiService = GithubApiService();
+
+  // 1. Get supported ABIs for the device
+  final supportedAbis = await updater.getSupportedAbis();
+
+  // 2. Get latest release info from GitHub
+  final release = await apiService.getLatestGithubAPKRelease(
+    ownerGithub: 'guido-cutipa',
+    repositoryGithub: 'dummy-repo',
+    apkKeyName: '', // Optional: filter by name
+    supportedAbis: supportedAbis,
   );
 
-  // 1. Get latest release
-  final latestRelease = await apiService.getLatestRelease();
-  
-  // 2. Compare versions
-  final currentVersion = await updater.getCurrentAppVersion();
-  final hasUpdate = VersionComparator.isNewer(
-    currentVersion, 
-    latestRelease.tagName.replaceFirst('v', ''),
-  );
-
-  if (hasUpdate) {
-    // 3. Download APK
-    final downloader = ApkDownloaderService();
-    final apkFile = await downloader.downloadApk(
-      url: latestRelease.assets.first.browserDownloadUrl,
-      fileName: 'app-update.apk',
+  if (release != null) {
+    // 3. Compare versions
+    final currentVersion = await updater.getCurrentAppVersion();
+    final isNewer = VersionComparator().isNewerVersion(
+      release.version,
+      currentVersion,
     );
 
-    // 4. Install
-    await updater.installApk(apkFile.path);
+    if (isNewer) {
+      // 4. Download APK
+      final downloader = ApkDownloaderService();
+      final filePath = await downloader.downloadAPK(
+        release.apkUrl,
+        null, // optional token
+        (received, total) {
+          // progress callback
+        },
+      );
+
+      if (filePath != null) {
+        // 5. Install
+        await updater.installApk(filePath);
+      }
+    }
   }
 }
 ```
@@ -98,9 +110,10 @@ void checkForUpdates() async {
 - A complete example app demonstrating the usage of the `github_release_apk_updater` package can be found in the [example]
 - Modify main.dart to include your GitHub repository details and run the app to see the update flow in action.
 ```dart
-  final ownerGithub = 'guido-cutipa'; // Replace with your owner
-  final repositoryGithub = 'dummy-repo'; // Replace with your repository
-  final apkKeyName = '';
+  final ownerGithub = 'guido-cutipa';
+  final repositoryGithub = 'dummy-repo';
+  final apkKeyName = ''; // Optional
+  final supportedAbis = await _githubReleaseApkUpdaterPlugin.getSupportedAbis();
   dynamic tokenGithub; // optional: only needed for private repos
 ```
 - Compile and run the example app on an Android device to test the update functionality.

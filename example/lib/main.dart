@@ -82,11 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     try {
       // 1. Fetch latest release info from GitHub API
+      final supportedAbis = await _githubReleaseApkUpdaterPlugin
+          .getSupportedAbis();
       final release = await _apiService.getLatestGithubAPKRelease(
         ownerGithub: ownerGithub,
         repositoryGithub: repositoryGithub,
         apkKeyName: apkKeyName,
         tokenGithub: tokenGithub,
+        supportedAbis: supportedAbis,
       );
 
       if (release != null) {

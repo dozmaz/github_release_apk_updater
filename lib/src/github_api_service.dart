@@ -23,6 +23,7 @@ class GithubApiService {
   ///   assets exist in the release.
   /// - [tokenGithub]: An optional personal access token for authenticating
   ///   with the GitHub API (useful for private repositories or higher rate limits).
+  /// - [supportedAbis]: A list of supported ABIs for the APK.
   ///
   /// Returns a [GithubAPKRelease] if a release is found, or `null` if the
   /// request fails or no release exists.

@@ -48,8 +48,8 @@ class GithubAPKRelease {
       for (final abi in supportedAbis) {
         for (final asset in assets) {
           final String name = asset['name'] as String;
-          final String url =
-              (asset['browser_download_url'] ?? asset['url']) as String;
+          // use asset['url'] instead asset['browser_download_url'] to use token for download
+          final String url = asset['url'] as String;
 
           if (name.endsWith('.apk') && name.contains(abi)) {
             // If apkKey is provided, it must also match
