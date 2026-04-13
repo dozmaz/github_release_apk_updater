@@ -12,6 +12,9 @@ class MockGithubReleaseApkUpdaterPlatform
 
   @override
   Future<void> installApk(String filePath) => Future.value();
+
+  @override
+  Future<List<String>?> getSupportedAbis() => Future.value(['arm64-v8a']);
 }
 
 void main() {

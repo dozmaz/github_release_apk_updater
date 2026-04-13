@@ -46,5 +46,33 @@ void main() {
       expect(result?.apkUrl, 'http://example.com/app-release.apk');
       expect(result?.releaseNote, 'Initial release');
     });
+
+    test('getLatestGithubRelease handles supportedAbis', () async {
+      when(mockDio.get(any, options: anyNamed('options'))).thenAnswer(
+        (_) async => Response(
+          requestOptions: RequestOptions(path: ''),
+          statusCode: 200,
+          data: {
+            'tag_name': 'v1.0.0',
+            'body': 'Initial release',
+            'assets': [
+              {
+                'name': 'app-arm64-v8a-release.apk',
+                'browser_download_url': 'http://example.com/arm64.apk',
+              },
+            ],
+          },
+        ),
+      );
+
+      final result = await apiService.getLatestGithubAPKRelease(
+        ownerGithub: 'test',
+        repositoryGithub: 'test',
+        apkKeyName: '',
+        supportedAbis: ['arm64-v8a'],
+      );
+
+      expect(result?.apkUrl, 'http://example.com/arm64.apk');
+    });
   });
 }

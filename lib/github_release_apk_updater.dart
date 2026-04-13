@@ -37,4 +37,11 @@ class GithubReleaseApkUpdater {
     final PackageInfo packageInfo = await PackageInfo.fromPlatform();
     return packageInfo.version;
   }
+
+  /// Retrieves the list of supported ABIs (CPU architectures) for the device.
+  ///
+  /// Returns a [List<String>] of supported ABIs (e.g., ["arm64-v8a", "armeabi-v7a"]).
+  Future<List<String>?> getSupportedAbis() {
+    return GithubReleaseApkUpdaterPlatform.instance.getSupportedAbis();
+  }
 }

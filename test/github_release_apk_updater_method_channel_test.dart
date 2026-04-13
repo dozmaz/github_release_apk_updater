@@ -12,6 +12,9 @@ void main() {
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+          if (methodCall.method == 'getSupportedAbis') {
+            return ['arm64-v8a', 'armeabi-v7a'];
+          }
           return '42';
         });
   });
@@ -23,5 +26,9 @@ void main() {
 
   test('getPlatformVersion', () async {
     expect(await platform.getPlatformVersion(), '42');
+  });
+
+  test('getSupportedAbis', () async {
+    expect(await platform.getSupportedAbis(), ['arm64-v8a', 'armeabi-v7a']);
   });
 }

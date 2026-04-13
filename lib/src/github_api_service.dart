@@ -31,6 +31,7 @@ class GithubApiService {
     required String repositoryGithub,
     required String apkKeyName,
     String? tokenGithub,
+    List<String>? supportedAbis,
   }) async {
     // Implementation...
     try {
@@ -48,7 +49,11 @@ class GithubApiService {
 
       if (response.statusCode == 200) {
         final data = response.data as Map<String, dynamic>;
-        return GithubAPKRelease.fromJson(data, apkKeyName);
+        return GithubAPKRelease.fromJson(
+          data,
+          apkKeyName,
+          supportedAbis: supportedAbis,
+        );
       } else {
         debugPrint(
           'Failed to load release from github API. Status code: ${response.statusCode}',

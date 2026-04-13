@@ -28,4 +28,12 @@ class MethodChannelGithubReleaseApkUpdater
       debugPrint('Error triggering installation: $e');
     }
   }
+
+  @override
+  Future<List<String>?> getSupportedAbis() async {
+    final abis = await methodChannel.invokeListMethod<String>(
+      'getSupportedAbis',
+    );
+    return abis;
+  }
 }

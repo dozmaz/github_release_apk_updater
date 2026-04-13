@@ -43,6 +43,8 @@ class GithubReleaseApkUpdaterPlugin :
             } else {
                 result.error("INVALID_ARGUMENT", "filePath is missing", null)
             }
+        } else if (call.method == "getSupportedAbis") {
+            result.success(Build.SUPPORTED_ABIS.toList())
         } else {
             result.notImplemented()
         }

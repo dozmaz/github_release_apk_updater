@@ -31,4 +31,8 @@ abstract class GithubReleaseApkUpdaterPlatform extends PlatformInterface {
   Future<void> installApk(String filePath) {
     throw UnimplementedError('installApk() has not been implemented.');
   }
+
+  Future<List<String>?> getSupportedAbis() {
+    throw UnimplementedError('getSupportedAbis() has not been implemented.');
+  }
 }

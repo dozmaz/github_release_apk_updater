@@ -1,3 +1,8 @@
+## 1.0.2
+
+* Fixed issue where the plugin was not able to find the APK file in the GitHub releases.
+* Added support download APK for multiple ABIs (CPU architectures).
+
 ## 1.0.1
 
 * Fixed dependency conflict with `win32` between `geolocator` and `device_info_plus` in the project environment.
