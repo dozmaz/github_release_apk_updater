@@ -1,3 +1,8 @@
+## 1.0.4
+
+* Updated package metadata and documentation for the latest release.
+* Improved changelog formatting and release note consistency.
+
 ## 1.0.3
 
 * Fixed issue where the plugin was not able to find the APK file in the GitHub releases.
