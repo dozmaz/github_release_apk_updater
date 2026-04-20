@@ -34,4 +34,4 @@ migrate_working_dir/
 requirement.md
 /.agents/
 /.gemini/
-/.github/
+/.github/copilot-instructions.md
