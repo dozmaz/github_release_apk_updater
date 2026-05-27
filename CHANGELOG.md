@@ -1,3 +1,18 @@
+## 1.0.5
+
+### 🐛 Bug Fixes
+
+#### Android
+- Fixed build errors with `Nullability and flow analysis for Kotlin` (ConstraintSystem.proposalDue)
+- Fixed `android/build.gradle.kts` plugin configuration issues
+
+### 🛠️ Build System
+
+#### Android
+-Migrated to modern Android Gradle Plugin configuration
+- Cleaned up deprecated `buildscript` and `allprojects` blocks
+- Added `compileSdk = 36` for compatibility with latest Gradle versions
+
 ## 1.0.4
 
 * Updated package metadata and documentation for the latest release.
