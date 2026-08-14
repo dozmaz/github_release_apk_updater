@@ -35,3 +35,7 @@ requirement.md
 /.agents/
 /.gemini/
 /.github/copilot-instructions.md
+
+/example/android/gradlew
+/example/android/gradlew.bat
+/example/android/local.properties
