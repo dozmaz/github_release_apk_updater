@@ -35,7 +35,8 @@ class ApkDownloaderService {
         debugPrint('Cannot get external storage directory');
         return null;
       }
-      final headers = <String, String>{'Accept': 'application/octet-stream'};
+      final headers = <String, String>{'Accept': 'application/octet-stream',
+      'X-GitHub-Api-Version': '2022-11-28'};
       if (tokenGithub != null && tokenGithub.isNotEmpty) {
         headers['Authorization'] = 'Bearer $tokenGithub';
       }

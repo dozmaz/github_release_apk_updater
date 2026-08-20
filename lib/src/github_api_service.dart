@@ -40,6 +40,7 @@ class GithubApiService {
           'https://api.github.com/repos/$ownerGithub/$repositoryGithub/releases/latest';
       final headers = <String, String>{
         'Accept': 'application/vnd.github.v3+json',
+        'X-GitHub-Api-Version': '2026-03-10',
       };
 
       if (tokenGithub != null && tokenGithub.isNotEmpty) {
