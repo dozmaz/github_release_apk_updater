@@ -1,4 +1,20 @@
 
+## 1.0.9
+
+### 🛠️ Improvements
+
+#### Android
+- Refactored `GithubReleaseApkUpdaterPlugin.kt`: simplified to core MethodChannel scaffold, removed temporary `installApk` and `getSupportedAbis` implementations
+- Updated Android Gradle Plugin to `9.1.0`
+- Updated Kotlin to `2.4.0`
+
+### 🔧 Configuration
+- Added `analyzer` excludes for `build/**` and `android/**` in `analysis_options.yaml`
+
+### 📱 Example
+- Added `MainActivity.kt` for example app (`blog.guidocutipa` and `bo.endesyc` package variants)
+
+---
 
 ## 1.0.8
 
