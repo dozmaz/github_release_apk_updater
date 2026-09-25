@@ -1,5 +1,24 @@
 
 
+## 1.0.8
+
+### ✨ Features
+
+#### Android
+- Added required permissions to `AndroidManifest.xml`: `INTERNET`, `REQUEST_INSTALL_PACKAGES`, and `READ_EXTERNAL_STORAGE`
+- Registered `androidx.core.content.FileProvider` for secure APK file sharing during installation
+
+### 🛠️ Improvements
+
+#### GitHub API
+- Added `X-GitHub-Api-Version: 2022-11-28` header to APK download requests for GitHub API versioning compliance
+- Added `X-GitHub-Api-Version: 2026-03-10` header to release metadata requests
+
+### 📦 Build & Distribution
+- Added `/build` to `.pubignore` to exclude build artifacts from published package
+
+---
+
 ## 1.0.7
 
 - Modernize Android build configuration with Gradle 9.1.0 and AGP 9.0.1
