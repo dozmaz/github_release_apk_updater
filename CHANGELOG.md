@@ -1,4 +1,13 @@
 
+## 1.0.10
+
+### 🛠️ Improvements
+
+#### Android
+- Added `provider_paths.xml` with FileProvider path configuration: `external-path`, `external-files-path`, `files-path`, and `cache-path` to support secure APK sharing across storage locations
+
+---
+
 ## 1.0.9
 
 ### 🛠️ Improvements
