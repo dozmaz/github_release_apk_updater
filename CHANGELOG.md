@@ -1,3 +1,5 @@
+
+
 ## 1.0.7
 
 - Modernize Android build configuration with Gradle 9.1.0 and AGP 9.0.1
