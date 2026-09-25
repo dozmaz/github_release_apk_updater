@@ -1,5 +1,5 @@
 
-## 1.0.12
+## 1.0.11
 
 ### 🐛 Bug Fixes
 
@@ -7,14 +7,6 @@
 - Changed `FileProvider` authority from `${applicationId}.fileprovider` to `${applicationId}.github_release_apk_updater.fileprovider`
 - Fixes manifest merger conflict when host app declares its own `FileProvider` with a different `android:resource` (error: `Failed to find configured root that contains ...`)
 - No changes required in the host app `AndroidManifest.xml`
-
----
-
-## 1.0.11
-
-### 🐛 Bug Fixes
-
-#### Android
 - Removed `FileProvider` declaration from plugin `AndroidManifest.xml` to fix manifest merger conflict with host apps that declare their own `FileProvider` (error: `Attribute meta-data#android.support.FILE_PROVIDER_PATHS@resource ... is also present`)
 - The plugin no longer owns a `FileProvider`; the host app is responsible for declaring it with its own `provider_paths`
 
