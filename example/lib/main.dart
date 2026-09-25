@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final _versionComparator = VersionComparator();
 
   // IMPORTANT: Set your repository information here
-  final ownerGithub = 'guido-cutipa'; // Replace with your owner
-  final repositoryGithub = 'dummy-repo'; // Replace with your repository
+  final ownerGithub = 'dozmaz'; // Replace with your owner
+  final repositoryGithub = 'github_release_apk_updater'; // Replace with your repository
   final apkKeyName = '';
   dynamic tokenGithub; // optional: only needed for private repos
 
