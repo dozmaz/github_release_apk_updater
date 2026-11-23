@@ -1,4 +1,18 @@
 
+## 1.0.12
+
+### ✨ Features
+
+#### 📱 Example App
+- Added complete Flutter example application (`example/`) demonstrating the full GitHub release update lifecycle:
+  - Check for latest GitHub releases using `GithubApiService` and device `supportedAbis`.
+  - Compare versions using `VersionComparator` against the currently installed app version (`getCurrentAppVersion`).
+  - Interactive update dialog (`UpdateDialog`) with release notes display, live download progress tracking with `LinearProgressIndicator` via `ApkDownloaderService`, and APK installation trigger.
+  - Native APK installation execution via `GithubReleaseApkUpdater.installApk`.
+  - Comprehensive example project setup with multi-package variant support on Android, widget test, and integration test suite (`plugin_integration_test.dart`).
+
+---
+
 ## 1.0.11
 
 ### 🐛 Bug Fixes

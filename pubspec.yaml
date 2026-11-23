@@ -1,28 +1,26 @@
 name: github_release_apk_updater
 description: "A Flutter plugin to automatically check for, download, and install updates directly from GitHub releases."
-version: 1.0.11
+version: 1.0.12
 repository: https://github.com/dozmaz/github_release_apk_updater
 homepage: https://github.com/dozmaz/github_release_apk_updater
 
 environment:
-  sdk: ^3.11.3
+  sdk: ^3.13.3
   flutter: '>=3.3.0'
 
 dependencies:
-  dio: ^5.11.0
+  dio: ^5.11.1
   flutter:
     sdk: flutter
-  package_info_plus: ^10.2.1
+  package_info_plus: ^10.2.2
   path_provider: ^2.1.6
   plugin_platform_interface: ^2.1.8
-
 dev_dependencies:
+  build_runner: ^2.16.2
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
-  mockito: ^5.7.0
-  build_runner: ^2.15.0
-
+  mockito: ^5.8.1
 flutter:
   plugin:
     platforms:
